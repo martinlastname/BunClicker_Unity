@@ -6,14 +6,14 @@ public class BunCounterHandler : MonoBehaviour
 {
     public UnityEngine.UI.Text bunCount;
 
-    void Start ()
+    void Start()
     {
-        bunCount.text = string.Format(Text.STR_NUM_BUNS, Vars.getNumBuns());
+        bunCount.text = string.Format(Text.STR_NUM_BUNS, Vars.Buns.getNumBuns());
     }
 
-    void Update ()
+    void Update()
     {
-        bunCount.text = string.Format(Text.STR_NUM_BUNS, Vars.getNumBuns());
+        bunCount.text = string.Format(Text.STR_NUM_BUNS, Vars.Buns.getNumBuns());
     }
 
 }

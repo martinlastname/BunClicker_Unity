@@ -7,27 +7,27 @@ public class BunButtonHandler : MonoBehaviour {
     public UnityEngine.UI.Text bunButtonText;
 
 	// Use this for initialization
-	void Start ()
+	void Start()
     {
         bunButtonText.text = Text.STR_BUN_BUTTON;
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void Update()
     {
         // Grammar
-        if (Vars.getBunsPerClick() == 1)
+        if (Vars.Buns.getBunsPerClick() == 1)
         {
             bunButtonText.text = Text.STR_BUN_BUTTON;
         }		
         else
         {
-            bunButtonText.text = Text.STR_BUN_BUTTON_P;
+            bunButtonText.text = Text.STR_BUN_BUTTON + "s";
         }
 	}
 
-    public void clicked ()
+    public void onClick()
     {
-        Vars.addBuns(Vars.getBunsPerClick());
+        Vars.Buns.addBuns(Vars.Buns.getBunsPerClick());
     }
 }
