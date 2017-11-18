@@ -9,13 +9,15 @@ public class PatchButtonHandler : MonoBehaviour {
     void Start()
     {
         patchText.text = Text.STR_PATCH_BUTTON + "\n"
-            + string.Format(Text.STR_COST_CAR, Vars.Patches.getPatchCost());
+            + string.Format(Text.STR_COST_CAR, Vars.Patches.getPatchCost()) + "\n"
+            + string.Format(Text.STR_NUM_PATCH, Vars.Patches.getNumPatches());
     }
 
     void Update()
     {
         patchText.text = Text.STR_PATCH_BUTTON + "\n"
-            + string.Format(Text.STR_COST_CAR, Vars.Patches.getPatchCost());
+            + string.Format(Text.STR_COST_CAR, Vars.Patches.getPatchCost()) + "\n"
+            + string.Format(Text.STR_NUM_PATCH, Vars.Patches.getNumPatches());
     }
 
     public void onClick()

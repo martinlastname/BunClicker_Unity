@@ -9,6 +9,8 @@ public class BunCounterHandler : MonoBehaviour
     void Start()
     {
         bunCount.text = string.Format(Text.STR_NUM_BUNS, Vars.Buns.getNumBuns());
+
+        StartCoroutine(breedBuns());
     }
 
     void Update()
@@ -16,4 +18,13 @@ public class BunCounterHandler : MonoBehaviour
         bunCount.text = string.Format(Text.STR_NUM_BUNS, Vars.Buns.getNumBuns());
     }
 
+    IEnumerator breedBuns()
+    {
+        while (true)
+        {
+            Vars.Buns.addBuns(Vars.Farms.getBunsPerSec());
+
+            yield return new WaitForSeconds(1);
+        }
+    }
 }

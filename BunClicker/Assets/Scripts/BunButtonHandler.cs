@@ -5,6 +5,7 @@ using UnityEngine;
 public class BunButtonHandler : MonoBehaviour {
 
     public UnityEngine.UI.Text bunButtonText;
+    public TooltipHandler tooltip;
 
 	// Use this for initialization
 	void Start()
@@ -28,6 +29,23 @@ public class BunButtonHandler : MonoBehaviour {
 
     public void onClick()
     {
-        Vars.Buns.addBuns(Vars.Buns.getBunsPerClick());
+        if (Random.value <= (Vars.Buns.getPercentageChance()/100f)) {
+            Vars.Buns.addBuns(Vars.Buns.getBunsPerClick());
+        }
+        else
+        {
+
+        }
+    }
+
+    public void onHover()
+    {
+        tooltip.setText(string.Format(Text.STR_CHANCE_BUNS, Vars.Buns.getPercentageChance()));
+        tooltip.enable();
+    }
+
+    public void onExit()
+    {
+        tooltip.disable();
     }
 }
